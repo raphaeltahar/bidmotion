@@ -1,0 +1,28 @@
+<div class="bidmotionTestApp">
+  <h1>Hydrane AngularJS Frontend Dev CS</h1>
+  <button ng-click="requestCallback()">Go</button>
+  <select ng-model="selectedContinent" ng-options="continent for continent in continentList" ng-disabled="!dataLoaded"></select>
+  <select ng-model="selectedMetrics" ng-options="metric for metric in metrics" ng-disabled="!dataLoaded"></select>
+  <select ng-model="selectedMaxResults" ng-options="max for max in maxResults" ng-disabled="!dataLoaded"></select>
+
+  <hcChart id="chart1" options="chartOptions" class="span9"></hcChart>
+  <div ng-show="countries" class="main-table">
+    <table>
+      <tr>
+        <th ng-click="orderListBy(0)">continentName</th>
+        <th ng-click="orderListBy(1)">countryName</th>
+        <th ng-click="orderListBy(2)">population</th>
+      </tr>
+      <tr ng-repeat="country in countries | filter:selectedContinent!=='ALL'?selectedContinent:''">
+        <td>{{ country.continentName }}</td>
+        <td>{{ country.countryName }}</td>
+        <td>{{ country.population }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>TOTAL</td>
+        <td>{{ totalPopulation }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

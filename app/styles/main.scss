@@ -1,0 +1,35 @@
+// bower:scss
+// endbower
+
+body {
+  padding: 0;
+}
+
+.bidmotionTestApp{
+  .main-table{
+    max-height: 500px;
+    overflow-y: scroll;
+    border: 1px solid grey;
+  }
+  table{
+    width: 100%;
+    tr:nth-child(even) {
+      background-color: #DDDDDD;
+    }
+    th{font-size: 13px; background-color: #999; color: white; padding: 10px 2px; font-weight:lighter;}
+    td{padding-left: 5px;}
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 550px;
+    text-align: center;
+    margin: auto;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+}
